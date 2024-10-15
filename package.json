@@ -1,0 +1,39 @@
+{
+  "name": "@d3p1/segment-intersection",
+  "version": "0.0.0",
+  "description": "A segment intersection implementation to improve my JS skills",
+  "author": "C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)",
+  "homepage": "https://github.com/d3p1/segment-intersection#readme",
+  "bugs": {
+    "url": "https://github.com/d3p1/segment-intersection/issues"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d3p1/segment-intersection.git"
+  },
+  "keywords": [
+    "javascript",
+    "canvas",
+    "javascript-animation"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "lint": "npx eslint docs",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier docs --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@d3p1/commitlint-config": "^1.0.1",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "prettier": "3.3.3",
+    "recommended": "^0.0.7"
+  }
+}
