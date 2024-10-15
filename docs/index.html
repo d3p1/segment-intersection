@@ -10,7 +10,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Segment Intersection</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <script type="module">
+    import App from './js/app.js'
+
+    const app = new App([
+      [
+        {
+          x: 200,
+          y: 200,
+          label: 'A'
+        },
+        {
+          x: 400,
+          y: 400,
+          label: 'B'
+        },
+      ],
+      [
+        {
+          x: 200,
+          y: 400,
+          label: 'C'
+        },
+        {
+          x: 400,
+          y: 200,
+          label: 'D'
+        },
+      ]
+    ])
+    app.run()
+  </script>
 </body>
 </html>
