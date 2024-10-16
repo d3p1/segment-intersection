@@ -2,6 +2,8 @@
  * @description App
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
+import Mathy from './utils/mathy.js'
+
 export default class App {
   /**
    * @type {{x: number, y: number, label: string}[][]}
@@ -67,6 +69,7 @@ export default class App {
 
     this.#updateMouseSegment(t * 0.001)
     this.#drawSegments()
+    this.#drawIntersectionsAgainstMouseSegment()
 
     requestAnimationFrame(this.run.bind(this))
   }
@@ -83,6 +86,29 @@ export default class App {
     this.#mouseSegment[0].y = this.mouse.y + y
     this.#mouseSegment[1].x = this.mouse.x - x
     this.#mouseSegment[1].y = this.mouse.y - y
+  }
+
+  /**
+   * Draw intersections against mouse segments
+   *
+   * @returns {void}
+   * @note    It is known that the last element in the
+   *          segment array is the mouse segments
+   */
+  #drawIntersectionsAgainstMouseSegment() {
+    for (let i = 0; i < this.segments.length - 1; i++) {
+      const intersection = Mathy.calculateIntersection(
+        this.segments[i],
+        this.#mouseSegment,
+      )
+
+      if (intersection) {
+        this.#drawPoint({
+          ...intersection,
+          label: 'I',
+        })
+      }
+    }
   }
 
   /**
